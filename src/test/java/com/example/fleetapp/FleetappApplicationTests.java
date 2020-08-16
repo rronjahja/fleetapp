@@ -1,4 +1,4 @@
-package com.kindsonthegenius.fleetapp;
+package com.example.fleetapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
