@@ -49,7 +49,7 @@
         </div>
 
         <!--logo start-->
-        <a href="index.html" class="logo">FLEET <span class="lite">MS</span></a>
+        <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
         <!--logo end-->
 
         <div class="nav search-row" id="top_menu">
@@ -72,12 +72,12 @@
                 <li id="task_notificatoin_bar" class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <i class="icon-task-l"></i>
-                        <span class="badge bg-important">5</span>
+                        <span class="badge bg-important">6</span>
                     </a>
                     <ul class="dropdown-menu extended tasks-bar">
                         <div class="notify-arrow notify-arrow-blue"></div>
                         <li>
-                            <p class="blue">You have 5 pending tasks</p>
+                            <p class="blue">You have 6 pending letter</p>
                         </li>
                         <li>
                             <a href="#">
@@ -268,9 +268,11 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
-                            </span>
-                        <span class="username">Jenifer Smith</span>
+<!--                                /*@thymesVar id="getUsername" type=""*/-->
+                                <img alt="" th:src="@{'/img/' + ${#authentication.getPrincipal().getUsername()} + '.jpg'  }" height="38" width="38">
+                                <!--                              <img alt="" th:src="@{'/img/photos/nitaaziri.jpg'}" height="38" width="38">-->
+                            </span> <!-- if username is not found or something, show GUEST !!! -->
+                        <span class="username" th:text="${#authentication.getPrincipal().getUsername()}">Guest</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
@@ -336,9 +338,9 @@
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" th:href="@{/vehicleMakes}">Vehicle Make</a></li>
-                        <li><a class="" th:href="@{/vehicleTypes}">Vehicle Types</a></li>
-                        <li><a class="" th:href="@{/vehicleModels}">Vehicle Models</a></li>
+                        <li><a class="" th:href="@{/vehicleMake}">Vehicle Make</a></li>
+                        <li><a class="" th:href="@{/vehicleType}">Vehicle Types</a></li>
+                        <li><a class="" th:href="@{/vehicleModel}">Vehicle Models</a></li>
                         <li><a class="" th:href="@{/vehicleStatuses}">Status Values</a></li>
                     </ul>
                 </li>
@@ -353,7 +355,7 @@
                         <li><a class="" th:href="@{/clients}">Clients</a></li>
                         <li><a class="" th:href="@{/suppliers}">Suppliers</a></li>
                         <li><a class="" th:href="@{/contacts}">Contacts</a></li>
-                        <li><a class="" th:href="@{/users}">User</a></li>
+                        <li><a class="" th:href="@{/user}">User</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -363,8 +365,8 @@
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" th:href="@{/jobTitles}">Job Titles</a></li>
-                        <li><a class="" th:href="@{/employeeTypes}">Employee Types</a></li>
+                        <li><a class="" th:href="@{/jobTitle}">Job Titles</a></li>
+                        <li><a class="" th:href="@{/employeeType}">Employee Types</a></li>
                     </ul>
                 </li>
 
@@ -375,8 +377,8 @@
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" th:href="@{/invoices}">Invoices</a></li>
-                        <li><a class="" th:href="@{/invoiceStatuses}">Invoice Status Values</a></li>
+                        <li><a class="" th:href="@{/invoice}">Invoices</a></li>
+                        <li><a class="" th:href="@{/invoiceStatus}">Invoice Status Values</a></li>
                     </ul>
                 </li>
 
@@ -388,8 +390,8 @@
                     </a>
                     <ul class="sub">
                         <li><a class="" th:href="@{/countries}">Countries</a></li>
-                        <li><a class="" th:href="@{/states}"><span>States</span></a></li>
-                        <li><a class="" th:href="@{/locations}"><span>Locations</span></a></li>
+                        <li><a class="" th:href="@{/state}"><span>States</span></a></li>
+                        <li><a class="" th:href="@{/location}"><span>Locations</span></a></li>
 
                     </ul>
                 </li>

@@ -42,15 +42,13 @@
 <!-- container section start -->
 <section class="" id="container">
     <!--header start-->
-
     <header class="header dark-bg">
         <div class="toggle-nav">
-            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i
-                    class="icon_menu"></i></div>
+            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
         </div>
 
         <!--logo start-->
-        <a class="logo" href="index.html">Nice <span class="lite">Admin</span></a>
+        <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
         <!--logo end-->
 
         <div class="nav search-row" id="top_menu">
@@ -70,26 +68,24 @@
             <ul class="nav pull-right top-menu">
 
                 <!-- task notificatoin start -->
-                <li class="dropdown" id="task_notificatoin_bar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <li id="task_notificatoin_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <i class="icon-task-l"></i>
-                        <span class="badge bg-important">5</span>
+                        <span class="badge bg-important">6</span>
                     </a>
                     <ul class="dropdown-menu extended tasks-bar">
                         <div class="notify-arrow notify-arrow-blue"></div>
                         <li>
-                            <p class="blue">You have 5 pending tasks</p>
+                            <p class="blue">You have 6 pending letter</p>
                         </li>
                         <li>
                             <a href="#">
                                 <div class="task-info">
-                                    <div class="desc">Design PSD</div>
+                                    <div class="desc">Design PSD </div>
                                     <div class="percent">90%</div>
                                 </div>
                                 <div class="progress progress-striped">
-                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90"
-                                         class="progress-bar progress-bar-success" role="progressbar"
-                                         style="width: 90%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
                                         <span class="sr-only">90% Complete (success)</span>
                                     </div>
                                 </div>
@@ -104,9 +100,7 @@
                                     <div class="percent">30%</div>
                                 </div>
                                 <div class="progress progress-striped">
-                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="30"
-                                         class="progress-bar progress-bar-warning" role="progressbar"
-                                         style="width: 30%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
                                         <span class="sr-only">30% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -119,8 +113,7 @@
                                     <div class="percent">80%</div>
                                 </div>
                                 <div class="progress progress-striped">
-                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80"
-                                         class="progress-bar progress-bar-info" role="progressbar" style="width: 80%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                         <span class="sr-only">80% Complete</span>
                                     </div>
                                 </div>
@@ -133,8 +126,7 @@
                                     <div class="percent">78%</div>
                                 </div>
                                 <div class="progress progress-striped">
-                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="78"
-                                         class="progress-bar progress-bar-danger" role="progressbar" style="width: 78%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
                                         <span class="sr-only">78% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -147,8 +139,7 @@
                                     <div class="percent">50%</div>
                                 </div>
                                 <div class="progress progress-striped active">
-                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar"
-                                         role="progressbar" style="width: 50%">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
                                         <span class="sr-only">50% Complete</span>
                                     </div>
                                 </div>
@@ -162,8 +153,8 @@
                 </li>
                 <!-- task notificatoin end -->
                 <!-- inbox notificatoin start-->
-                <li class="dropdown" id="mail_notificatoin_bar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <li id="mail_notificatoin_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <i class="icon-envelope-l"></i>
                         <span class="badge bg-important">5</span>
                     </a>
@@ -227,8 +218,8 @@
                 </li>
                 <!-- inbox notificatoin end -->
                 <!-- alert notification start-->
-                <li class="dropdown" id="alert_notificatoin_bar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <li id="alert_notificatoin_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
                         <i class="icon-bell-l"></i>
                         <span class="badge bg-important">7</span>
@@ -274,11 +265,13 @@
                 <!-- alert notification end-->
                 <!-- user login dropdown start-->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
-                            </span>
-                        <span class="username">Jenifer Smith</span>
+<!--                                /*@thymesVar id="getUsername" type=""*/-->
+                                <img alt="" th:src="@{'/img/' + ${#authentication.getPrincipal().getUsername()} + '.jpg'  }" height="38" width="38">
+                                <!--                              <img alt="" th:src="@{'/img/photos/nitaaziri.jpg'}" height="38" width="38">-->
+                            </span> <!-- if username is not found or something, show GUEST !!! -->
+                        <span class="username" th:text="${#authentication.getPrincipal().getUsername()}">Guest</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
@@ -315,7 +308,7 @@
 
     <!--sidebar start-->
     <aside>
-        <div class="nav-collapse " id="sidebar">
+        <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
                 <li class="active">
@@ -325,73 +318,71 @@
                     </a>
                 </li>
                 <li class="sub-menu">
-                    <a class="" href="javascript:;">
+                    <a href="javascript:;" class="">
                         <i class="icon_document_alt"></i>
                         <span>Vehicles</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
-                    <ul class="sub"> <!-- th call method in getmapping /countries -->
-                        <li><a class="" th:href="@{/vehicle}">Vehicle Data</a></li>
-                        <li><a class="" th:href="@{/vehiclemaintenance}">Vehicle Maintenance</a></li>
-                        <li><a class="" th:href="@{/vehiclemovement}">Movements</a></li>
-                        <li><a class="" th:href="@{/vehiclehire}">Hires</a></li>
-
+                    <ul class="sub">
+                        <li><a class="" th:href="@{/vehicles}">Vehicle Data</a></li>
+                        <li><a class="" th:href="@{/vehicleMaintenances}">Maintenance</a></li>
+                        <li><a class="" th:href="@{/vehicleMovements}">Movements</a></li>
+                        <li><a class="" th:href="@{/vehicleHires}">Hires</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
-                    <a class="" href="javascript:;">
+                    <a href="javascript:;" class="">
                         <i class="icon_desktop"></i>
                         <span>Parameters</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" th:href="@{/vehiclemake}">Vehicle Make</a></li>
-                        <li><a class="" th:href="@{/vehicletype}">Vehicle Types</a></li>
-                        <li><a class="" th:href="@{/vehiclemodel}">Vehicle Models</a></li>
-                        <li><a class="" th:href="@{/vehiclestatus}">Status Values</a></li>
+                        <li><a class="" th:href="@{/vehicleMake}">Vehicle Make</a></li>
+                        <li><a class="" th:href="@{/vehicleType}">Vehicle Types</a></li>
+                        <li><a class="" th:href="@{/vehicleModel}">Vehicle Models</a></li>
+                        <li><a class="" th:href="@{/vehicleStatuses}">Status Values</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
-                    <a class="" href="javascript:;">
+                    <a href="javascript:;" class="">
                         <i class="icon_desktop"></i>
                         <span>People</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" th:href="@{/employee}">Employees</a></li>
-                        <li><a class="" th:href="@{/client}">Clients</a></li>
-                        <li><a class="" th:href="@{/supplier}">Suppliers</a></li>
-                        <li><a class="" th:href="@{/contact}">Contacts</a></li>
-                        <li><a class="" th:href="@{/user}">Users</a></li>
+                        <li><a class="" th:href="@{/employees}">Employees</a></li>
+                        <li><a class="" th:href="@{/clients}">Clients</a></li>
+                        <li><a class="" th:href="@{/suppliers}">Suppliers</a></li>
+                        <li><a class="" th:href="@{/contacts}">Contacts</a></li>
+                        <li><a class="" th:href="@{/user}">User</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
-                    <a class="" href="javascript:;">
+                    <a href="javascript:;" class="">
                         <i class="icon_desktop"></i>
                         <span>HR Settings</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" th:href="@{/jobtitle}">Job Titles</a></li>
-                        <li><a class="" th:href="@{/employeetype}">Employee Types</a></li>
+                        <li><a class="" th:href="@{/jobTitle}">Job Titles</a></li>
+                        <li><a class="" th:href="@{/employeeType}">Employee Types</a></li>
                     </ul>
                 </li>
 
-
                 <li class="sub-menu">
-                    <a class="" href="javascript:;">
-                        <i class="icon_documents_alt"></i>
+                    <a href="javascript:;" class="">
+                        <i class="icon_desktop"></i>
                         <span>Accounts</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
                         <li><a class="" th:href="@{/invoice}">Invoices</a></li>
-                        <li><a class="" th:href="@{/invoicestatus}"><span>Invoice Status Values</span></a></li>
-
+                        <li><a class="" th:href="@{/invoiceStatus}">Invoice Status Values</a></li>
                     </ul>
                 </li>
+
                 <li class="sub-menu">
-                    <a class="" href="javascript:;">
+                    <a href="javascript:;" class="">
                         <i class="icon_documents_alt"></i>
                         <span>Globals</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
@@ -400,8 +391,10 @@
                         <li><a class="" th:href="@{/countries}">Countries</a></li>
                         <li><a class="" th:href="@{/state}"><span>States</span></a></li>
                         <li><a class="" th:href="@{/location}"><span>Locations</span></a></li>
+
                     </ul>
                 </li>
+
             </ul>
             <!-- sidebar menu end-->
         </div>
