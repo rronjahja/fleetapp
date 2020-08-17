@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<html .... xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Profile | Creative - Bootstrap 3 Responsive Admin Template</title>
+  <title>User Profile</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -415,8 +415,8 @@
                   <p>@jenifersmith</p>
                   <p><i class="fa fa-twitter">jenifertweet</i></p>
                   <h6>
-                                    <span><i class="icon_clock_alt"></i>11:05 AM</span>
-                                    <span><i class="icon_calendar"></i>25.10.13</span>
+                      <span th:text="${#dates.format(#dates.createNow(), 'hh:mm a')}"></span>
+                      <span th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}"></span>
                                     <span><i class="icon_pin_alt"></i>NY</span>
                                 </h6>
                 </div>

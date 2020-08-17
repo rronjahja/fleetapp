@@ -443,6 +443,7 @@
                             <tbody>
                             <tr>
                                 <th>Photo</th>
+                                <th>Username</th>
                                 <th><i class="icon_profile"></i> Full Name</th>
                                 <th><i class="icon_calendar"></i>Hire Date</th>
                                 <th><i class="icon_mail_alt"></i> Email</th>
@@ -453,13 +454,14 @@
                             <tr th:each="employee:${employees}">
                                 <td>
                                     <a id="photoButton" th:href="@{'/img/photos/' + ${employee.id} +'.jpg'}">
-                                     <img height="40" th:src="@{'/img/photos/' + ${employee.id} +'.jpg'}"  width="40"></a>
-<!--                                    <a id="photoButton" th:href="@{'/img/photos/1.jpg'}">-->
-<!--                                        <img height="40" th:src="@{'/img/photos/1.jpg'}"-->
-<!--                                             width="40">-->
-<!--                                    </a>-->
+                                        <img height="40" th:src="@{'/img/photos/' + ${employee.id} +'.jpg'}" width="40"></a>
+                                    <!--                                    <a id="photoButton" th:href="@{'/img/photos/1.jpg'}">-->
+                                    <!--                                        <img height="40" th:src="@{'/img/photos/1.jpg'}"-->
+                                    <!--                                             width="40">-->
+                                    <!--                                    </a>-->
                                 </td>
-
+                                <td><a th:href="@{/employees/assignUsername/(id=${employee.id})}"
+                                       th:text="${employee.username} ?: 'Check'"></a></td>
                                 <td th:text="${employee.firstname} + ' ' + ${employee.lastname}">Fullname</td>
                                 <td th:text="${employee.hireDate}">HireDate</td>
                                 <td th:text="${employee.email}">Email</td>
@@ -934,6 +936,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <input type="hidden" id="txtUsernameEdit" name="username">
                         <button class="btn btn-primary" type="submit">Sign in</button>
                     </form>
                 </div>

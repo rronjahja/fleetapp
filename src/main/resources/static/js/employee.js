@@ -20,6 +20,7 @@ $('document').ready(function() {
             $('#txtMobileEdit').val(employee.mobile);
             $('#txtOthernameEdit').val(employee.othername);
             $('#txtPhoneEdit').val(employee.phone);
+            $('#txtUsernameEdit').val(employee.username);
             $('#fupPhotoEdit').val(employee.photo);
             $('#txtSSNEdit').val(employee.socialSecurityNumber);
             $('#ddlStateEdit').val(employee.stateid);
